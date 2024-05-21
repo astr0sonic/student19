@@ -1,5 +1,5 @@
 #include <fstream>
-#include "eratosthenes.h"
+#include "sundaram.h"
 
 using namespace std;
 
