@@ -113,12 +113,25 @@ std::string encode(const std::string& text) {
 }
 
 std::string decode(const std::string& encoded, std::map<char, std::string>& codes) {
-    Node* root;
-    MtoTree(root,codes);
-    int index=-1;
-    while(index<(int)encoded.size()-2){
-        ddecode(root,index,encoded);
+    // Node* root;
+    // root->left=nullptr; root->right=nullptr;
+    // MtoTree(root,codes);
+    // int index=-1;
+    // while(index<(int)encoded.size()-2){
+    //     ddecode(root,index,encoded);
+    // }
+    string str="";
+    std::string decoded = "";
+    for(char c : encoded){
+        str+=c;
+        for(auto cc : codes){
+            if(cc.second==str){
+                decoded+=cc.first;
+                str="";
+                break;
+            }
+        }
     }
-    std::string decoded = ss;
+
     return decoded;
 }
