@@ -1,4 +1,5 @@
 #include "eratosthenes.h"
+#include <cmath>
 
 using namespace std;
 
