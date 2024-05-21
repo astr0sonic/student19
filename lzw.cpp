@@ -45,21 +45,21 @@ std::string decompress(const std::vector<int>& compressed) {
 
     int dictSize = 256;
     int prevCode = compressed[0];
-    string output = dictionary[prevCode];
-    string entry;
-    string w;
+    string entry=dictionary[prevCode];
+    string output = entry;
+    string w=entry;
 
     for (int i = 1; i < compressed.size(); i++) {
         int currCode = compressed[i];
         if (dictionary.find(currCode) == dictionary.end()) {
             entry = dictionary[prevCode];
-            entry += w[0];
+            entry += entry[0];
         } else {
             entry = dictionary[currCode];
         }
         output += entry;
+        dictionary[dictSize++] = w + entry[0];
         w = entry;
-        dictionary[dictSize++] = dictionary[prevCode] + entry[0];
         prevCode = currCode;
     }
 
