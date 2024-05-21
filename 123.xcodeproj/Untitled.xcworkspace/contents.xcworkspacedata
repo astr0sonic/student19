@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:">
+      location = "container:">
+   </FileRef>
+   <FileRef
+      location = "group:../max_value.cpp">
+   </FileRef>
+   <FileRef
+      location = "group:../max_value.h">
+   </FileRef>
+   <FileRef
+      location = "group:../task1.cpp">
    </FileRef>
 </Workspace>

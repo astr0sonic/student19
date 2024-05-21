@@ -13,7 +13,7 @@ double calculateMaxValue(double* nums, int n) {
         varr[0]=max+nums[i];
         varr[1]=max-nums[i];
         varr[2]=max*nums[i];
-        if(c[i]!=0){
+        if(nums[i]!=0){
             varr[3]=max/nums[i];
             varr[7]=min/nums[i];
         }
