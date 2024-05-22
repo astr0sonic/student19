@@ -93,13 +93,13 @@ void getPN(const string& expression, stack<string>* postfixNotation)
             }
         }
         else {
-            throw "error";
+            return;
         }
         index++;
     }
 
     if (openBracketsCounter > 0) {
-        throw "error";
+        return;
     }
 
     while (!operators.empty()) {
@@ -130,7 +130,7 @@ double getExpressionValue(double firstNumber, double secondNumber, string operat
     }
     else if (operators == "/") {
         if (secondNumber == 0.0) {
-            throw "error";
+            result=INFINITY;
         }
         else {
             result = firstNumber / secondNumber; 
@@ -170,7 +170,7 @@ double calculatePN(stack<string> postfixNotation)
             }
             else {
                 if (stackRPN.size() < 2) {
-                    throw "error";
+                    return INFINITY;
                 }
 
                 double firstNumber = stackRPN.top();
@@ -186,7 +186,7 @@ double calculatePN(stack<string> postfixNotation)
     }
 
     if (stackRPN.size() != 1) {
-        throw "error";
+        return INFINITY;
     }
 
     return stackRPN.top();
